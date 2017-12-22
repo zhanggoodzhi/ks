@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="welcome">
+	<title>考试考辅(ChivoxExam.SpokenEnglisth)内部开发环境</title>
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/font/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="">
+
+	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/canvasbg.js"></script>
+</head>
+
+<body>
+	<div class="header">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">欢迎来到考试考辅(ChivoxExam.SpokenEnglisth)内部开发环境</a>
+				</div>
+			</div>
+		</nav>
+		<div style="margin-top:-20px;font-size:15px;display:none" id="notice">
+			<div class="alert alert-success" role="alert">
+				<div class="container">
+					构建成功，请等待1~2分钟
+					<span id="time" data-time="60">(60)</span>，如果没有任何效果请联系管理员
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container" id="cs">
+		<div class="page-header">
+			<h5>工具</h5>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://zentao.chivox.com/zentao/my-bug.html" target="_blank">
+						<div class="icon">
+							<i class="fa fa-pencil"></i>
+						</div>
+						<div class="text">
+							<span>禅道</span>
+						</div>
+						<div class="info">
+							禅道入口，大家天天都要把能扔掉的BUG都扔走吧
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--禅道-->
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8080" target="_blank">
+						<div class="icon">
+							<i class="fa fa-paper-plane-o"></i>
+						</div>
+						<div class="text">
+							<span>Jenkins</span>
+						</div>
+						<div class="info">
+							1:内部开发环境自动集成部署。
+							<br/>2:每周自动出包(完整版／补丁包)。
+							<br/>3:更新发布项目接口文档
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--jenkins-->
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="ftp://10.0.200.112" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>FTP服务器</span>
+						</div>
+						<div class="info">
+							请确认提前把本机的DNS主服务器指向公司的DNS服务器：61.177.7.1后刷新本地DNS缓存后才能正常访问！
+							<br>用于开发中功能集成，自测；每周代码冻结提测前的自测环境
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--FTP服务器-->
+		</div>
+
+		<div class="page-header">
+			<h5>系统列表</h5>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8088/web" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>CESE考务中心</span>
+						</div>
+						<div class="info">
+							请确认提前把本机的DNS主服务器指向公司的DNS服务器：61.177.7.1后刷新本地DNS缓存后才能正常访问！
+							<br>用于开发中功能集成，自测；每周代码冻结提测前的自测环境
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE考务中心开发集成环境-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/protocol" target="_blank">
+						<div class="icon">
+							<i class="fa fa-plug"></i>
+						</div>
+						<div class="text">
+							<span>接口协议</span>
+						</div>
+						<div class="info">
+							项目中考试机，监考机，考务中心之间的接口协议文档。
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--接口协议-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8089/web/admin.html" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>悠悠考拉-业务支撑后台</span>
+						</div>
+						<div class="info">
+							悠悠考拉-业务支撑后台
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE校园版原型设计-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8089/web" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>悠悠考拉网</span>
+						</div>
+						<div class="info">
+							请确认提前把本机的DNS主服务器指向公司的DNS服务器：61.177.7.1后刷新本地DNS缓存后才能正常访问！
+							<br>用于开发中功能集成，自测；每周代码冻结提测前的自测环境
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--悠悠考拉网开发集成环境-->
+
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8090" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>评分系统</span>
+						</div>
+						<div class="info">
+							请确认提前把本机的DNS主服务器指向公司的DNS服务器：61.177.7.1后刷新本地DNS缓存后才能正常访问！
+							<br>用于开发中功能集成，自测；每周代码冻结提测前的自测环境
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE评分系统开发集成环境-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8070" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>考务系统</span>
+						</div>
+						<div class="info">
+							考务系统
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE考务系统开发集成环境-->
+		</div>
+
+		<div class="page-header">
+			<h5>Dailay Build</h5>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:18000" target="_blank">
+						<div class="icon">
+							<i class="fa fa-plug"></i>
+						</div>
+						<div class="text">
+							<span>悠悠考拉网</span>
+						</div>
+						<div class="info">
+
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:18000/web/admin.html" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>业务支撑后台</span>
+						</div>
+						<div class="info">
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:18002" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>阅卷评价系统</span>
+						</div>
+						<div class="info">
+						</div>
+					</a>
+				</div>
+			</div>
+
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:18001" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>考务系统2.0</span>
+						</div>
+						<div class="info">
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>校园版教师机安装程序</span>
+						</div>
+						<div class="info">
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>校园版学生机安装程序</span>
+						</div>
+						<div class="info">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-header">
+			<h5>系统原型</h5>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/school_protype" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>校园版原型设计-卷面分析</span>
+						</div>
+						<div class="info">
+							CESE校园版原型设计
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE校园版原型设计-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/school_protypev20" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>校园版原型设计</span>
+						</div>
+						<div class="info">
+							CESE校园版原型设计
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE校园版原型设计-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/content_protype" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>业务支撑原型设计</span>
+						</div>
+						<div class="info">
+							CESE业务支撑原型设计
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE业务支撑系统原型设计-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/paper_protype" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>制题工具原型设计</span>
+						</div>
+						<div class="info">
+							CESE制题工具原型设计
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE制题工具原型设计-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/mark_protype" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>评分系统原型设计</span>
+						</div>
+						<div class="info">
+							CESE评分系统原型设计
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE评分系统原型设计-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/formalAffair_protype" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>考务系统原型设计</span>
+						</div>
+						<div class="info">
+							考务系统原型设计
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE考务系统开发集成环境-->
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/SchoolExam" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>校园版考中部分原型设计</span>
+						</div>
+						<div class="info">
+							校园版考中部分原型设计
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--考中部分-->
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/FormalExam" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>正式考试考中部分原型设计</span>
+						</div>
+						<div class="info">
+							校园版考中部分原型设计
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--考中部分-->
+		</div>
+
+		<div class="page-header">
+			<h5>相关链接</h5>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ams.dev.chivox.com/doc/" target="_blank">
+						<div class="icon">
+							<i class="fa fa-paper-plane-o"></i>
+						</div>
+						<div class="text">
+							<span>AMS 2.0 API协议文档</span>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--AMS 2.0 API协议文档-->
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://doc.api.chivox.com/api_gray/index.php/11" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>内核接口说明</span>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--内核接口说明-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="ftp://user:ftpuser@10.0.200.60" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>已发布版本下载</span>
+						</div>
+						<div class="info">
+							目录： exam_release
+							<br>密码：ftpuser
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--已发布版本下载-->
+
+
+		</div>
+
+		<div class="page-header">
+			<h5>平台资源链接</h5>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/统一平台/" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>统一平台设计1.0</span>
+						</div>
+						<div class="info">
+
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com/驰声产品市场需求说明书/" target="_blank">
+						<div class="icon">
+							<i class="fa fa-magnet"></i>
+						</div>
+						<div class="text">
+							<span>驰声产品市场需求说明书（MRD）</span>
+						</div>
+						<div class="info">
+
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-header">
+			<h5>临时测试链接</h5>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8092/web" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>悠悠考拉网 用于试卷测试</span>
+						</div>
+						<div class="info">
+
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8093" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>评分系统 用于平台测试</span>
+						</div>
+						<div class="info">
+
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8098/web" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>CESE考务中心-For银川 开发</span>
+						</div>
+						<div class="info">
+							请确认提前把本机的DNS主服务器指向公司的DNS服务器：61.177.7.1后刷新本地DNS缓存后才能正常访问！
+							<br>用于开发中功能集成，自测；每周代码冻结提测前的自测环境
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE考务中心开发集成环境-->
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<a class="item item1" href="http://ks.dev.chivox.com:8099/web" target="_blank">
+						<div class="icon">
+							<i class="fa fa-fire"></i>
+						</div>
+						<div class="text">
+							<span>CESE考务中心-For银川正式考试</span>
+						</div>
+						<div class="info">
+							银川正式考试 V1.0.0_RT9
+							<br/>数据库： CESE_V1.0.0_RT9
+							<br/>账户： admin / 123
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--CESE考务中心开发集成环境-->
+		</div>
+
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
+
+</html>
