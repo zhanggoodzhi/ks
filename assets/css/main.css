@@ -60,3 +60,12 @@ body {
   border-radius: 0 0 3px 3px;
   color: #666666;
 }
+.tab-text {
+  color: black;
+}
+.tab-text:hover {
+  color: black!important;
+}
+.tab-pane .row {
+  margin-top: 10px;
+}
