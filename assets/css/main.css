@@ -45,6 +45,13 @@ body {
 .header {
   margin-bottom: 50px;
 }
+.header .navbar {
+  padding: 10px 0;
+}
+.header .navbar img {
+  float: left;
+  margin-right: 20px;
+}
 .info {
   position: absolute;
   top: 0;
@@ -68,4 +75,12 @@ body {
 }
 .tab-pane .row {
   margin-top: 10px;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+.box {
+  background: #e7eaec;
 }
