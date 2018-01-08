@@ -4,6 +4,34 @@ body {
   font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   min-height: 500px;
 }
+@keyframes back {
+  0% {
+    transform: rotateY(90deg);
+    z-index: -1;
+  }
+  50% {
+    transform: rotateY(90deg);
+    z-index: -1;
+  }
+  100% {
+    transform: rotateY(0deg);
+    z-index: 5;
+  }
+}
+@keyframes turn {
+  0% {
+    transform: rotateY(deg);
+    z-index: 5;
+  }
+  50% {
+    transform: rotateY(90deg);
+    z-index: -1;
+  }
+  100% {
+    transform: rotateY(90deg);
+    z-index: -1;
+  }
+}
 #cs .item {
   text-align: center;
   border-radius: 3px;
@@ -13,14 +41,14 @@ body {
   display: block;
 }
 #cs .item:hover .icon {
-  transform: rotateY(180deg);
+  animation: turn 0.3s;
+  animation-fill-mode: forwards;
 }
 #cs .item:hover .info {
-  transform: rotateY(360deg);
+  animation: back 0.3s;
+  animation-fill-mode: forwards;
 }
 #cs .icon {
-  transition: all 0.2s;
-  backface-visibility: hidden;
   display: block;
   padding: 60px 0;
 }
@@ -58,9 +86,7 @@ body {
   margin-right: 20px;
 }
 .info {
-  transform: rotateY(180deg);
-  z-index: -1;
-  backface-visibility: hidden;
+  transform: rotateY(90deg);
   transition: all 0.2s;
   position: absolute;
   top: 0;
